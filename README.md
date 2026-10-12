@@ -106,6 +106,20 @@ npx.cmd vercel --prod
 
 不要分享本机 localhost、开发服务器的内网地址或 Vercel 仪表盘地址。在无痕窗口检查生产域名是否无需登录即可访问；如出现 Vercel Authentication，检查项目 Settings → Deployment Protection 下的生产访问设置，分享开放访问的生产域名。
 
+## 使用现有 GitHub 账号发布（无需注册其他托管平台）
+
+已准备好 `gh-pages` 分支，包含按 `/iq-prank-online/` 基础路径打包的发布文件和 `.nojekyll`，并验证完整手机视口流程及分享路径。
+
+打开 [GitHub Pages 设置](https://github.com/ruishen236/iq-prank-online/settings/pages)，在 Build and deployment 中选择：
+
+- Source：`Deploy from a branch`
+- Branch：`gh-pages`
+- Folder：`/(root)`
+
+点击 Save，等发布完成。启用后的预期网址为 `https://ruishen236.github.io/iq-prank-online/`。准备好分支不等于已启用 Pages；实际状态以 GitHub 设置页面为准。公网地址仍需用朋友的手机网络直连实测，无法保证每个运营商网络均可访问。
+
+修改源码后，需要重新按同样基础路径构建并更新 `gh-pages` 发布文件；仅修改 `main` 分支不会自动更新这一静态版本。
+
 ## Netlify 免费备用部署
 
 如果 Vercel 默认域名在朋友的手机网络中无法访问，可先尝试 Netlify 备用入口。Netlify 提供免费方案及平台子域名；能否在具体运营商网络中直连，需要部署后实测。
