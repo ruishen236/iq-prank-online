@@ -106,6 +106,20 @@ npx.cmd vercel --prod
 
 不要分享本机 localhost、开发服务器的内网地址或 Vercel 仪表盘地址。在无痕窗口检查生产域名是否无需登录即可访问；如出现 Vercel Authentication，检查项目 Settings → Deployment Protection 下的生产访问设置，分享开放访问的生产域名。
 
+## Netlify 免费备用部署
+
+如果 Vercel 默认域名在朋友的手机网络中无法访问，可先尝试 Netlify 备用入口。Netlify 提供免费方案及平台子域名；能否在具体运营商网络中直连，需要部署后实测。
+
+[点击部署到 Netlify](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fruishen236%2Fiq-prank-online)
+
+1. 登录 Netlify 并选择 Free 免费方案，按提示连接 GitHub。
+2. 如果提示创建新 Git 仓库，可使用不同名称，如 `iq-prank-netlify`。
+3. 构建命令为 `npm run build`，发布目录为 `dist`，基础目录为项目根目录。仓库中的 `netlify.toml` 已提供配置；无需环境变量。
+4. 完成构建并发布网站。若页面显示 `Publish`，点击以开放公网访问。
+5. 复制 Netlify 生成的 `https://….netlify.app` 地址，先用手机移动网络和 Safari 实测，不登录也能进入首页和完成答题后，再分享给朋友。
+
+登录第三方账号和授权需由你本人完成。免费额度与公开访问设置以当前 [Netlify 价格页](https://www.netlify.com/pricing/) 和控制台为准。
+
 ## 修改文字与题目
 
 修改 `src/data/config.js`：
