@@ -1,8 +1,0 @@
-node_modules/
-dist/
-coverage/
-work/
-.env*
-!.env.example
-
-.vercel/
